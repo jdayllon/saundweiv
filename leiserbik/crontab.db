@@ -1,0 +1,1 @@
+{"name":"Refresh Workdir FrontTail","command":"/root/directory_checker.py","schedule":"* * * * *","timestamp":"Fri May 03 2019 14:34:42 GMT+0000 (UTC)","logging":"false","mailing":{},"_id":"ykl0iCqR6bYC2fQp"}
