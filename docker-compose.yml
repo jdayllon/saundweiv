@@ -57,6 +57,17 @@ services:
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
 
+  kafka-view:
+    image: sourcelaborg/kafka-webview
+    ports: 
+      - 9080:8080
+    volumes: 
+      - ./kafkawebview_data:/app/data 
+    #links:
+    #  - broker
+    depends_on:
+      - broker     
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
     container_name: elastic01
