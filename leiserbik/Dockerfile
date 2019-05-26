@@ -4,6 +4,9 @@ MAINTAINER Juan David Ayllón Burguillo <jdayllon@gmail.com>
 
 USER root
 
+# Install gcc
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev
+
 # Install pipenv
 RUN pip install --upgrade pip
 
@@ -15,6 +18,9 @@ RUN rm -rf master.zip
 WORKDIR /tmp/leiserbik-master
 #RUN ls -al
 RUN python setup.py install
+
+# Uninstall gcc
+RUN apk del .build-deps gcc musl-dev
 
 # Install node
 RUN apk add --update nodejs nodejs-npm wget curl supervisor
