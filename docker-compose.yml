@@ -124,6 +124,7 @@ services:
 # SERVERLESS 
   nuclio:
     image: quay.io/nuclio/dashboard:stable-amd64
+    hostname: nuclio
     ports:
       - 8070:8070
     volumes:
